@@ -11,11 +11,11 @@ const rl = readline.createInterface({ input, output });
 process.stdout.write('Please, type some word here\n');
 
 rl.on('line', (input) => {
-  writable.write(input);
-  writable.write('\n');
   if (input === 'exit') {
-    process.stdout.write('See you next time!');
     rl.close();
+  } else {
+    writable.write(input);
+    writable.write('\n');
   }
 });
 process.on('exit', () => process.stdout.write('\nSee you next time!'));
