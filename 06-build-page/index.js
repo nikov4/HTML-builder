@@ -1,5 +1,4 @@
 const fs = require('node:fs');
-const path = require('node:path');
 const { join, resolve, extname, basename, parse } = require('node:path');
 const {
   readdir,
@@ -19,7 +18,7 @@ const dirStyles = resolve(__dirname, 'styles');
 const dirBundle = resolve(__dirname, 'project-dist');
 const fileTemplate = join(__dirname, 'template.html');
 const dirAssets = join(dirBundle, 'assets');
-const fileCss = join(dirBundle, 'bundle.css');
+const fileCss = join(dirBundle, 'style.css');
 const fileHtml = join(dirBundle, 'index.html');
 
 // copy assets
