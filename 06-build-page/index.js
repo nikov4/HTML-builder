@@ -83,7 +83,7 @@ async function makeBundleHtml() {
         // const fileContent = fs.createReadStream(filePath);
         const fileContent = await readFile(filePath, 'utf8');
         // replace template
-        template = template.replace(`{{${fileName}}}`, fileContent);
+        template = template.replaceAll(`{{${fileName}}}`, fileContent);
         await writeFile(fileHtml, template, 'utf8');
       }
     }
