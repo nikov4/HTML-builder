@@ -24,6 +24,8 @@ const fileHtml = join(dirBundle, 'index.html');
 // copy assets
 async function copyAssets() {
   try {
+    await rm(dirAssets, { recursive: true, force: true });
+    await mkdir(dirAssets, { dir: true });
     const entries = await readdir(dir, { withFileTypes: true });
     for (const entry of entries) {
       if (entry.isDirectory()) {
