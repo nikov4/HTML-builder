@@ -13,6 +13,7 @@ process.stdout.write(
 );
 
 // check file exist
+/*
 async function checkFile() {
   try {
     await access(txtFile);
@@ -20,15 +21,16 @@ async function checkFile() {
     writeFile(txtFile, '', 'utf8');
   }
 }
-checkFile();
+*/
+// checkFile();
 
 // write input
 rl.on('line', (input) => {
   if (input === 'exit') {
     rl.close();
   } else {
-    appendFile(txtFile, input, 'utf8');
-    appendFile(txtFile, '\n', 'utf8');
+    appendFile(txtFile, `${input}\n`, 'utf8');
+    appendFile(txtFile, '', 'utf8');
   }
 });
 
